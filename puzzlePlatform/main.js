@@ -408,7 +408,7 @@ function updateBackground(){
   for(var r = 0; r < roomLayout.length; r++) {
     for(var c = 0; c < SETTINGS.LAYOUT_WIDTH; c++) {
       if(roomLayout[r][c] != undefined) {
-        color(backgroundColors[(r * SETTINGS.WIDTH + c) % backgroundColors.length]);
+        color(backgroundColors[(r * SETTINGS.LAYOUT_WIDTH + c) % backgroundColors.length]);
         box(c * 120 + SETTINGS.BASE_OFFSET_X + worldOffsetX, r * -120 + SETTINGS.BASE_OFFSET_Y + worldOffsetY, 120);
       }
     }
