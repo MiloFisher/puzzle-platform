@@ -416,7 +416,7 @@ function updateBackground(){
 }
 
 function drawPhysicsObjects() {
-  color("light_cyan");
+  color("white");
   box(npc.pos.x + worldOffsetX, npc.pos.y + worldOffsetY, 6);
   color("green");
   if(paddle.color == "blue") {
@@ -505,7 +505,7 @@ function updateObjects() {
     objectList[i].updateFunction();
     color("black");
     if (objectList[i].drawLabel.length == 1) { //we're trying to draw a custom char image
-      if (char(objectList[i].drawLabel, objectList[i].pos.x + worldOffsetX, objectList[i].pos.y + worldOffsetY).isColliding.rect.light_cyan)
+      if (char(objectList[i].drawLabel, objectList[i].pos.x + worldOffsetX, objectList[i].pos.y + worldOffsetY).isColliding.rect.white)
       {
         objectList[i].collisionFunction();
       }
@@ -582,7 +582,7 @@ function updatePaddle() {
     {
       // Draw the paddle
       color("transparent");
-      if (!rect(paddle.pos, paddle.width, paddle.height).isColliding.rect.light_cyan) {
+      if (!rect(paddle.pos, paddle.width, paddle.height).isColliding.rect.white) {
         if (!paddleHold && cameraPanning == 0) { //bool to have holding execute holding logic once per hold
           paddleHold = true;
           //TODO: check if NPC and light blue paddle are colliding
@@ -804,7 +804,7 @@ function exit(x, y, w, h) {
   this.collisionFunction = () => { };
   this.updateFunction = () => { 
     color("transparent");
-    if (rect(this.pos.x - 2 + worldOffsetX, this.pos.y + 3 + worldOffsetY - this.height, this.width, this.height).isColliding.rect.light_cyan) {
+    if (rect(this.pos.x - 2 + worldOffsetX, this.pos.y + 3 + worldOffsetY - this.height, this.width, this.height).isColliding.rect.white) {
       panCamera();
     }
   };
