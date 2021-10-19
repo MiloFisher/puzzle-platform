@@ -141,6 +141,7 @@ const SETTINGS = {
 options = {
   viewSize: {x: SETTINGS.WIDTH, y:SETTINGS.HEIGHT},
   isDrawingParticleFront: true,
+  isShowingScore: false,
   //isPlayingBgm: true,
   //seed: 7,
   //isReplayEnabled: true,
@@ -238,7 +239,7 @@ function update() {
   updateNPC();
 
   color("white");
-  text("room " + score, 10, 2);
+  text("room " + score, 8, 2);
 
   if(gameIsOver) {
     color("white");
@@ -463,9 +464,9 @@ function updateNPC() {
   else if (!npc.falling && !npc.jumping) { npc.Yspeed = 0; }
 
   //check if npc hits edge of screen
-  // if (npc.pos.x + worldOffsetX >= SETTINGS.WIDTH || npc.pos.x + worldOffsetX <= 0) {
-  //   changeDirection();
-  // }
+  if (npc.pos.x >= SETTINGS.WIDTH - worldOffsetX || npc.pos.x <= -worldOffsetX) {
+    changeDirection();
+  }
 
   // npc.pos.clamp(worldOffsetX, SETTINGS.WIDTH + worldOffsetX, worldOffsetY, SETTINGS.HEIGHT + worldOffsetY); //safety line of code? not sure if it helps at all
 
