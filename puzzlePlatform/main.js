@@ -248,7 +248,7 @@ function update() {
 }
 
 function readRoomTemplates() {
-  var file = "platformPuzzle/roomTemplates.json";
+  var file = "puzzlePlatform/roomTemplates.json";
   var rawFile = new XMLHttpRequest();
   rawFile.overrideMimeType("application/json");
   rawFile.open("GET", file, true);
