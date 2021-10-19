@@ -143,7 +143,7 @@ options = {
   isDrawingParticleFront: true,
   //isPlayingBgm: true,
   //seed: 7,
-  isReplayEnabled: true,
+  //isReplayEnabled: true,
   //theme: "dark",
 };
 
