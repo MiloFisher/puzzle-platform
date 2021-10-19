@@ -802,11 +802,13 @@ function exit(x, y, w, h) {
   this.width = w;
   this.height = h;
   this.drawLabel = "o";
+  this.alreadyHit = false;
   this.collisionFunction = () => { };
   this.updateFunction = () => { 
     color("transparent");
-    if (rect(this.pos.x - 2 + worldOffsetX, this.pos.y + 3 + worldOffsetY - this.height, this.width, this.height).isColliding.rect.white) {
+    if (!this.alreadyHit && rect(this.pos.x - 2 + worldOffsetX, this.pos.y + 3 + worldOffsetY - this.height, this.width, this.height).isColliding.rect.white) {
       panCamera();
+      this.alreadyHit = true;
     }
   };
 };
